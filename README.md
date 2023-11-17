@@ -130,4 +130,5 @@ complexity, in Java. It's OK if you need to pause here with Acebook and learn ho
     spring.datasource.username=postgres
     spring.datasource.password=postgres
     ```
+- Then run `git update-index --assume-unchanged src/main/resources/application-dev.properties` to untrack the file
 - Run mvn build commands :)
