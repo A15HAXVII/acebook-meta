@@ -14,7 +14,7 @@
 	"forwardPorts": [5432],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "java -version; psql --version; psql -h postgresdb -p 5432 -U postgres -W -d postgres"
+	"postCreateCommand": "chmod +x .devcontainer/postCreateScript.sh ;  printf 'CREATE DATABASE acebook_springboot_dev;\nCREATE DATABASE acebook_springboot_test;\n' | .devcontainer/postCreateScript.sh"
 
 	// Configure tool-specific properties.
 	// "customizations": {},

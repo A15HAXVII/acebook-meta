@@ -123,12 +123,17 @@ complexity, in Java. It's OK if you need to pause here with Acebook and learn ho
 
 # Zi-Tong's guide to running this on VSCODE/Docker dev containers
 - Build container
-- Enter postgresql password (postgres) into cli prompt
+- Enter postgres password (postgres)
 - Change application-dev properties:
-    ```
-    spring.datasource.url=jdbc:postgresql://localhost:5432/postgres
-    spring.datasource.username=postgres
-    spring.datasource.password=postgres
-    ```
+  ```
+  spring.datasource.username=postgres
+  spring.datasource.password=postgres
+  ```
+- Change application-test properties:
+  ```
+  spring.datasource.username=postgres
+  spring.datasource.password=postgres
+  ```
 - Then run `git update-index --assume-unchanged src/main/resources/application-dev.properties` to untrack the file
+- And run `git update-index --assume-unchanged src/main/resources/application-test.properties` to untrack the other file
 - Run mvn build commands :)
