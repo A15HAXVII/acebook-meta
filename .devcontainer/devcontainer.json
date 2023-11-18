@@ -11,7 +11,7 @@
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// This can be used to network with other containers or with the host.
-	"forwardPorts": [5432],
+	"forwardPorts": [5432, 5433],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "chmod +x .devcontainer/postCreateScript.sh ;  printf 'CREATE DATABASE acebook_springboot_dev;\nCREATE DATABASE acebook_springboot_test;\n' | .devcontainer/postCreateScript.sh"
