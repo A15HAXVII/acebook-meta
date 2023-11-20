@@ -1,4 +1,4 @@
-package com.makersacademy.acebook.model;
+package com.makersacademy.acebook;
 
 import com.github.javafaker.Faker;
 import com.makersacademy.acebook.Application;
