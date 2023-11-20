@@ -27,11 +27,11 @@ RUN sudo apt-get update && sudo apt-get -y install postgresql-client
 # RUN sudo apt-get -f --force-yes --yes install 
 # RUN rm google-chrome-stable_current_amd64.deb
 
-# Install and unzip (currently) matching ChromeDriver 119.0.6045.105
-RUN wget https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/119.0.6045.105/linux64/chromedriver-linux64.zip
-RUN unzip -q -j chromedriver-linux64.zip -d /usr/local/bin
-RUN rm chromedriver-linux64.zip
+# # Install and unzip (currently) matching ChromeDriver 119.0.6045.105
+# RUN wget https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/119.0.6045.105/linux64/chromedriver-linux64.zip
+# RUN unzip -q -j chromedriver-linux64.zip -d /usr/local/bin
+# RUN rm chromedriver-linux64.zip
 
-# Make ChromeDriver executable
-RUN chmod +x /usr/local/bin/chromedriver
+# # Make ChromeDriver executable
+# RUN chmod +x /usr/local/bin/chromedriver
 
