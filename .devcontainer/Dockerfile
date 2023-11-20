@@ -20,10 +20,9 @@ RUN if [ "${INSTALL_MAVEN}" = "true" ]; then su vscode -c "umask 0002 && . /usr/
 RUN sudo apt-get update && sudo apt-get -y install postgresql-client
 
 # Install latest stable Chrome version
-RUN apt update
-RUN apt upgrade
-RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-RUN sudo dpkg -i google-chrome-stable_current_amd64.deb || true
+RUN sudo apt update
+RUN sudo apt upgrade
+RUN sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && sudo dpkg -i google-chrome-stable_current_amd64.deb
 ## || true makes build ignore the error
 RUN sudo apt-get -f --force-yes --yes install 
 RUN rm google-chrome-stable_current_amd64.deb
