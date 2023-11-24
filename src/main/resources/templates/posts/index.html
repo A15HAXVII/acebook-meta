@@ -22,10 +22,10 @@
                 </div>
                 <div class="form-group">
                     <label>Image:</label>
-<!--                    <div class="custom-file">-->
-<!--                        <input type="file" class="custom-file-input" id="image" name="file">-->
-<!--                        <label class="custom-file-label" for="image">Choose file...</label>-->
-<!--                    </div>-->
+                    <!--                    <div class="custom-file">-->
+                    <!--                        <input type="file" class="custom-file-input" id="image" name="file">-->
+                    <!--                        <label class="custom-file-label" for="image">Choose file...</label>-->
+                    <!--                    </div>-->
                     <input type="file" class="form-control-file" name="file"/>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -42,7 +42,7 @@
             <!-- Show content as text or image -->
 
             <div class="media-body">
-                <h5 class="mt-0" th:text="${postItem.content}"></h5>
+                <h5 class="mt-0" th:text="${postItem.username + ': ' + postItem.content}"></h5>
                 <div th:switch="${postItem.image}">
                     <p th:case="''"></p>
                     <img th:case="*" alt="" th:src="*{'data:image/jpeg;base64,'+{postItem.image}}"
@@ -59,7 +59,7 @@
 
                 <!-- Show comments -->
                 <ul class="list-unstyled">
-                    <li th:each="comment: ${postItem.comments}" 
+                    <li th:each="comment: ${postItem.comments}"
                         th:text="${comment.username + ': ' + comment.content}"></li>
                 </ul>
 

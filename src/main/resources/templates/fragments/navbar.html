@@ -49,7 +49,7 @@
     </header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" th:href="@{/}">Posts</a>
-        <a class="navbar-brand" th:href="@{/Profile}">Profile</a>
+        <a class="navbar-brand" th:href="@{/profile/{username}(username=${#authentication.name})}">Profile</a>
         <a class="navbar-brand" th:href="@{/logout}">Logout</a>
 
         <!-- Move the signed in part to the right -->

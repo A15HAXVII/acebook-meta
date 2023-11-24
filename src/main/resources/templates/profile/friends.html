@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Friends</title>
+    <link rel="stylesheet" href="/main.css" />
+</head>
+<body>
+<div th:replace="fragments/navbar :: navbar"></div>
+    <h1 th:text="${user.username + 's Friends'}" /></h1>
+
+    <div th:switch="${user.username}">
+        <div th:case="${#authentication.name}">
+
+            <h1>Accept Requests</h1>
+                <ul th:each="friendRequest: ${friendRequests}">
+                    <li th:text="${friendRequest.usernameRequester}" /></li>
+                    <form action="#" th:action="@{friends/{usernameAccepter}/{usernameRequester}(usernameAccepter=${user.username}, usernameRequester=${friendRequest.usernameRequester})}" method="post">
+                        <input type="submit" name="accept" id="accept" value="Accept">
+                        <input type="submit" name="decline" id="decline" value="Decline">
+                    </form>
+                </ul>
+
+            <h1>More People To Friend</h1>
+                <form action="#" th:action="@{/friends/{username}(username=${user.username})}" method="post" th:object="${friendship}" >
+                    <input type="hidden" name="usernameRequester" th:value="${#authentication.name}" />
+                    <p>Friend Username: <input type="text" th:field="*{usernameAccepter}" /></p>
+                    <input type="hidden" name="status" th:value="pending" />
+                    <p><input type="submit" value="Submit" id="submit"/> <input type="reset" value="Reset" /></p>
+                </form>
+        </div>
+        <p th:case="*" /></p>
+    </div>
+</body>
+</html>

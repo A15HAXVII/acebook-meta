@@ -23,6 +23,7 @@ public class Post {
     private List<Comment> comments;
     @Lob
     private String image;
+    private String username;
 
     public Post() {
 
@@ -57,4 +58,6 @@ public class Post {
     public String getImage() { return image; }
 
     public void setImage(String image) { this.image = image; }
+    public String getUsername() {return username; }
+    public void setUsername() { this.username = username; }
 }
