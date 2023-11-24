@@ -126,11 +126,13 @@ complexity, in Java. It's OK if you need to pause here with Acebook and learn ho
 - Enter postgres password (postgres)
 - Change application-dev properties:
   ```
+  spring.datasource.url=jdbc:postgresql://localhost:5432/acebook_springboot_dev
   spring.datasource.username=postgres
   spring.datasource.password=postgres
   ```
 - Change application-test properties:
   ```
+  spring.datasource.url=jdbc:postgresql://localhost:5432/acebook_springboot_test
   spring.datasource.username=postgres
   spring.datasource.password=postgres
   ```
