@@ -43,7 +43,7 @@
     </header>
     <nav>
         <a th:href="@{/}">Posts</a>
-        <a th:href="@{/Profile}">Profile</a>
+        <a th:href="@{/profile/{username}(username=${#authentication.name})}">Profile</a>
         <a th:href="@{/logout}">Logout</a>
         <!-- Add more links as needed -->
         <div id="navbar-username" sec:authorize="isAuthenticated()">

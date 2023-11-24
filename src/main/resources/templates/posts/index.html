@@ -13,6 +13,7 @@
 
 
     <form action="#" th:action="@{/posts}" th:object="${post}" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="username" th:value="${#authentication.name}" />
         <p>Content: <input type="text" name="content" th:field="*{content}" /></p>
         <p>Image: <input type ="file" name="file"/></p>
         <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
@@ -20,7 +21,7 @@
 
     <ul th:each="i: ${#numbers.sequence(posts.size() -1, 0, -1)}">
         <li>
-            <p th:text="${posts[i].content}" /></p>
+            <p th:text="${posts[i].username + ': ' + posts[i].content}" /></p>
             <div th:switch="${posts[i].image}">
                 <p th:case="''"></p>
                 <img th:case="*" alt="" th:src="*{'data:image/jpeg;base64,'+{posts[i].image}}"
@@ -28,7 +29,7 @@
             </div>
             <!-- Display comments for each post -->
             <ul th:each="comment: ${posts[i].comments}">
-                <li th:text="${comment.content}" />
+                <li th:text="${comment.username + ': ' + comment.content}" />
             </ul>
 
 

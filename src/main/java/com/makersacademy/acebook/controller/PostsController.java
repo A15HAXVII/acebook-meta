@@ -47,8 +47,8 @@ public class PostsController {
 //    }
 
     @PostMapping("/posts")
-    public RedirectView createPost(@RequestParam("content") String content, @RequestParam("file") MultipartFile file){
-        service.savePostToDB(file, content);
+    public RedirectView createPost(@RequestParam("username") String username, @RequestParam("content") String content, @RequestParam("file") MultipartFile file){
+        service.savePostToDB(file, content, username);
         return new RedirectView("/posts");
     }
 }

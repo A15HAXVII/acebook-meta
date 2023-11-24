@@ -11,33 +11,35 @@ public class Friendship {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long userRequester;
-    private Long userAccepter;
+    @Column(name = "username_requester")
+    private String usernameRequester;
+    @Column(name = "username_accepter")
+    private String usernameAccepter;
 
     private String status;
 
     public Friendship() {}
 
-    public Friendship(Long userRequester, Long userAccepter, String status) {
-        this.userRequester = userRequester;
-        this.userAccepter = userAccepter;
+    public Friendship(String usernameRequester, String usernameAccepter, String status) {
+        this.usernameRequester = usernameRequester;
+        this.usernameAccepter = usernameAccepter;
         this.status = status;
     }
 
-    public Long getUserRequester() {
-        return userRequester;
+    public String getUsernameRequester() {
+        return usernameRequester;
     }
 
-    public void setUserRequester(Long userRequester) {
-        this.userRequester = userRequester;
+    public void setUsernameRequester(String usernameRequester) {
+        this.usernameRequester = usernameRequester;
     }
 
-    public Long getUserAccepter() {
-        return userAccepter;
+    public String getUsernameAccepter() {
+        return usernameAccepter;
     }
 
-    public void setUserAccepter(Long userAccepter) {
-        this.userAccepter = userAccepter;
+    public void setUsernameAccepter(String usernameAccepter) {
+        this.usernameAccepter = usernameAccepter;
     }
 
     public String getStatus() {

@@ -17,11 +17,12 @@ public class PostService {
     @Autowired
     private PostRepository postRepository;
 
-    public void savePostToDB(MultipartFile file, String content){
+    public void savePostToDB(MultipartFile file, String content, String username){
         Post p = new Post();
         String filename = StringUtils.cleanPath(file.getOriginalFilename());
 
         p.setContent(content);
+        p.setUsername(username);
         try {
             p.setImage(Base64.getEncoder().encodeToString(file.getBytes()));
         } catch(IOException e){
