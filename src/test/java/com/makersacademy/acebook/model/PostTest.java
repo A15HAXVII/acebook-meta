@@ -13,5 +13,7 @@ public class PostTest {
 	public void postHasContent() {
 		assertThat(post.getContent(), containsString("hello"));
 	}
+//	@Test
+//	public void postHasImage(){assertThat(post.getImage(), contains)}
 
 }
