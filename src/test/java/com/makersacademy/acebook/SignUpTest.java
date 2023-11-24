@@ -31,8 +31,8 @@ public class SignUpTest {
     @Before
     public void setup() throws MalformedURLException {
         System.setProperty("webdriver.chrome.driver", "http://localhost:4444/wd/hub");
-        DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-        driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);
+        ChromeOptions options = new ChromeOptions();
+        driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
         faker = new Faker();
     }
     // @Before

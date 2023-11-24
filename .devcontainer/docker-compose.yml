@@ -38,6 +38,7 @@ services:
     # psql -h postgresdb -p 5432 -U postgres -W -d postgres; to access... (password postgres)
   
   selenium:
+    container_name: selenium
     image: selenium/standalone-chrome:4.15.0-20231110
     restart: always
     ports:
